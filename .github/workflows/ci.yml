@@ -14,8 +14,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Run a simple check
-        run: echo "Hello Abhay, your pipeline is running!"
+      - name: Check required file exists
+        run: |
+          if [ -f "test.txt" ]; then
+            echo "test.txt found - check passed!"
+          else
+            echo "test.txt missing - failing build!"
+            exit 1
+          fi
 
-      - name: List files
+      - name: List all files
         run: ls -la
