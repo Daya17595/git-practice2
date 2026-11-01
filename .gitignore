@@ -1,0 +1,6 @@
+#ignore specific files
+secrets.txt
+#ignore by extension
+*.log
+#ignore entire folder
+node_modules/
